@@ -62,6 +62,10 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text='おやすみ〜{0}'.format(user_name)))
+    elif event.message.text in '好き' or event.message.text in 'すき':
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text='私も好きだよ！{0}！'.format(user_name)))
     else:
         line_bot_api.reply_message(
             event.reply_token,
